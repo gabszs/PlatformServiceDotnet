@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PlatformService.Data;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -35,3 +36,4 @@ app.MapControllers();
 PrepDb.PrepPopulation(app);
 
 app.Run();
+//public partial class Program { }

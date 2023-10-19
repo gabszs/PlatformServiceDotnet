@@ -71,7 +71,7 @@ namespace PlatformService.Controllers
             var platformModel = _mapper.Map<Platform>(platformCreateDto);            
             _repository.CreatePlatform(platformModel);
 
-            if (! await _repository.SaveChanges())
+            if (!await _repository.SaveChanges())
             {
                 ModelState.AddModelError("", "Something went wrong while savin");
                 return StatusCode(500, ModelState);
