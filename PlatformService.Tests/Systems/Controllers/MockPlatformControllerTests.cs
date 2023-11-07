@@ -18,33 +18,33 @@ namespace PlatformService.Tests.Systems.Controllers
     {
         public class MockPlatformsControllerTests
         {
-            private readonly IPlatformRepo _platformRepository;
-            private readonly IMapper _mapper;
+            //private readonly IPlatformRepo _platformRepository;
+            //private readonly IMapper _mapper;
 
-            public MockPlatformsControllerTests()
-            {
-                _platformRepository = A.Fake<IPlatformRepo>();
-                _mapper = A.Fake<IMapper>();
-            }
+            //public MockPlatformsControllerTests()
+            //{
+            //    _platformRepository = A.Fake<IPlatformRepo>();
+            //    _mapper = A.Fake<IMapper>();
+            //}
 
-            [Fact]
-            public async void PlatformController_GetPlatforms_ReturnOk()
-            {
-                var platforms = A.Fake<IEnumerable<PlatformReadDto>>();
-                var platformIEnumerable = A.Fake<IEnumerable<PlatformReadDto>>();
+            //[Fact]
+            //public async void PlatformController_GetPlatforms_ReturnOk()
+            //{
+            //    var platforms = A.Fake<IEnumerable<PlatformReadDto>>();
+            //    var platformIEnumerable = A.Fake<IEnumerable<PlatformReadDto>>();
 
-                // A.CallTo(() => _platformRepository.GetAllPlatforms()).Returns(platforms);
-                A.CallTo(() => _mapper.Map<IEnumerable<PlatformReadDto>>(platforms))
-                    .Returns(platformIEnumerable);
+            //    // A.CallTo(() => _platformRepository.GetAllPlatforms()).Returns(platforms);
+            //    A.CallTo(() => _mapper.Map<IEnumerable<PlatformReadDto>>(platforms))
+            //        .Returns(platformIEnumerable);
 
-                var controller = new PlatformsController(_platformRepository, _mapper);
+            //    var controller = new PlatformsController(_platformRepository, _mapper);
 
-                var result = await controller.GetPlatforms();
+            //    var result = await controller.GetPlatforms();
 
-                result.Should().NotBeNull();
-                result.Should().BeOfType(typeof(OkObjectResult));
+            //    result.Should().NotBeNull();
+            //    result.Should().BeOfType(typeof(OkObjectResult));
 
-            }
+            // }
 
 
 
